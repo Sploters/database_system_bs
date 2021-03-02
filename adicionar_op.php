@@ -47,12 +47,7 @@ $nivel = $array['nivel_usuario'];
 		<h4>Cadastro de OPs</h4>
 		<div class="form-group" style="margin-top: 20px">
 	    	<label>Número da OP</label>
-	    	<input type="number" name="op_num" class="form-control" required autocomplete="off" placeholder="Número da OP">
-  		</div>
-
-  		<div class="form-group" style="margin-top: 20px">
-	    	<label>Item OP</label>
-	    	<input type="text" name="op_item" class="form-control" required autocomplete="off" placeholder="Item OP">
+	    	<input type="text" name="op_num" class="form-control" required autocomplete="off" placeholder="Número da OP">
   		</div>
 
 		<div style="text-align: right; margin-top: 20px">

@@ -5,6 +5,11 @@
 	<title>Adicionando Pedidos</title>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<script src="https://kit.fontawesome.com/1b313b9cc5.js" crossorigin="anonymous"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="js/jquery.mask.min.js" type="text/javascript"></script>
+
 <style>
 body{
 	background-color: #ffffff;
@@ -43,6 +48,11 @@ $nivel = $array['nivel_usuario'];
 ?>
 <div class="container" style="width: 400px; margin-top: 70px">
 
+<script type="text/javascript">
+//Data
+$("#data").mask("99/99/9999");
+ </script>
+
 	<form action="_insert_pedido.php" method="post">
 		<h4>Cadastro de Pedidos</h4>
 		<div class="form-group" style="margin-top: 20px">
@@ -51,13 +61,8 @@ $nivel = $array['nivel_usuario'];
   		</div>
 
   		<div class="form-group" style="margin-top: 20px">
-	    	<label>Pedido Item</label>
-	    	<input type="text" name="pedido_item" class="form-control" required autocomplete="off" placeholder="Pedido Item">
-  		</div>
-
-  		<div class="form-group" style="margin-top: 20px">
 	    	<label>Pedido Prazo</label>
-	    	<input type="text" name="pedido_prazo" class="form-control" required autocomplete="off" placeholder="Prazo do Pedido">
+	    	<input type="text" name="pedido_prazo" id="data" class="form-control" required autocomplete="off" placeholder="Prazo do Pedido">
   		</div>
 
   		<div class="form-group" style="margin-top: 20px">
@@ -80,6 +85,6 @@ $nivel = $array['nivel_usuario'];
 </div>
 
 <script type="text/JavaScript"src="js/bootstrap.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 </body>
 </html>

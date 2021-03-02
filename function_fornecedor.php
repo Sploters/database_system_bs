@@ -7,6 +7,7 @@ function retorna($cnpj, $conexao) {
 	if($resultado->num_rows){
 		$row = mysqli_fetch_assoc($resultado);
 		$valores['nome_fornecedor'] = $row['nome_fornecedor'];
+		$valores['id_fornecedor'] = $row['id_fornecedor'];
 	}else{
 		$valores['nome_fornecedor'] = 'CNPJ Inválido';
 	}

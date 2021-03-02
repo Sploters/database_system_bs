@@ -49,9 +49,12 @@
 include 'conexao.php';
 
 $sql = "SELECT * FROM recebimento";
-$buscar = mysqli_query($conexao,$sql);
-$array = mysqli_fetch_array($buscar);
-$id_receb = $array['id_receb'];
+$busca = mysqli_query($conexao,$sql);
+while ($array = mysqli_fetch_array($busca))
+{
+	$id_receb = $array['id_receb'];
+}
+
 ?>
 
 <?php
@@ -90,7 +93,7 @@ $nivel = $array['nivel_usuario'];
 		      <th scope="col">NF</th>
 		      <th scope="col">Item NF</th>
 		      <th scope="col">QTD</th>
-		      <th scope="col">Pedido</th>
+		      <th scope="col">Nº Pedido</th>
 		      <th scope="col">Item Pedido</th>
 		      <th scope="col">Código Material</th>
 		      <th scope="col">Descrição</th>
@@ -123,13 +126,14 @@ $nivel = $array['nivel_usuario'];
 
 		    	<?php
 		    		include 'conexao.php';
-		    		$sql = "SELECT empresa_origem FROM `origem` WHERE id_origem = $id_origem_r";
+		    		$sql = "SELECT * FROM `origem` WHERE id_origem = $id_origem_r";
 
 		    		$busca = mysqli_query($conexao,$sql);
 
 		    		while ($array = mysqli_fetch_array($busca))
 		    		{
-		    			$id_origem = $array['empresa_origem'];
+		    			$id_origem = $array['id_origem'];
+		    			$empresa_origem = $array['empresa_origem'];
 		    			//$sql = "INSERT INTO `recebimento`(`id_origem`) VALUES ('$id_origem')";
 		    		?>
 
@@ -141,9 +145,9 @@ $nivel = $array['nivel_usuario'];
 
 		    		while ($array = mysqli_fetch_array($busca))
 		    		{
-		    			$id_pedido = $array['pedido_num'];
+		    			$id_pedido = $array['id_pedido'];
+		    			$pedido_num = $array['pedido_num'];
 		    			$item_pedido = $array['pedido_item'];
-		    			//$sql = "INSERT INTO `recebimento`(`id_pedido`, `item_pedido`) VALUES ($id_pedido, 'item_pedido')";
 		    		?>
 
 		    	<?php
@@ -180,6 +184,8 @@ $nivel = $array['nivel_usuario'];
 
 		    		while ($array = mysqli_fetch_array($busca))
 		    		{
+		    			$id_certificado = $array['id_certificado'];
+		    			$num_certificado = $array['num_certificado'];
 		    			$status_certificado = $array['status_certificado'];
 		    			//$sql = "INSERT INTO `recebimento`(`num_certificado`, `item_certificado`, `status_certificado`) VALUES ($num_certificado, '$item_certificado', '$status_certificado')";
 		    		?>
@@ -224,11 +230,11 @@ $nivel = $array['nivel_usuario'];
 				      <td><?php echo $ticket ?></td>
 				      <td><?php echo $recebedor ?></td>
 				      <td><?php echo $data_receb ?></td>
-				      <td><?php echo $id_origem ?></td>
+				      <td><?php echo $empresa_origem ?></td>
 				      <td><?php echo $nf_num ?></td>
 				      <td><?php echo $item_nf ?></td>
 				      <td><?php echo $qtd_receb ?></td>
-				      <td><?php echo $id_pedido ?></td>
+				      <td><?php echo $pedido_num ?></td>
 				      <td><?php echo $item_pedido ?></td>
 				      <td><?php echo $cod_material ?></td>
 				      <td><?php echo $den_material ?></td>
@@ -239,12 +245,12 @@ $nivel = $array['nivel_usuario'];
 				      <td><?php echo $status_receb ?></td>
 		      		<td>
 
-	      			<a class="btn btn-warning btn-sm" form-group style="margin-left: 5px" href="editar_recebimento.php?id=<?php echo $id_recebimento ?>" role="button"><i class="fas fa-edit"></i></a>
+	      			<a class="btn btn-warning btn-sm" form-group style="margin-left: 5px" href="editar_recebimento.php?id=<?php echo $id_receb ?>" role="button"><i class="fas fa-edit"></i></a>
 
 	      			<?php
 	      				if ($nivel != 3){
 	      			?>
-		      		<a class="btn btn-danger btn-sm" form-group href="deletar_recebimento.php?id=<?php echo $id_recebimento ?>" role="button"><i class="fas fa-trash-alt"></i></a>
+		      		<a class="btn btn-danger btn-sm" form-group href="deletar_recebimento.php?id=<?php echo $id_receb ?>" role="button"><i class="fas fa-trash-alt"></i></a>
 			    		<?php } ?>
 			    								<?php } ?>
 											<?php } ?>

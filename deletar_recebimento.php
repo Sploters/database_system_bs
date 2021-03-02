@@ -11,7 +11,7 @@ if(!isset($_SESSION['usuario'])){
 include 'conexao.php';
 $id = $_GET['id'];
 
-$sql = "DELETE FROM `certificado` WHERE id_certificado = $id";
+$sql = "DELETE FROM `recebimento` WHERE id_receb = $id";
 $deletar = mysqli_query($conexao,$sql);
 
 ?>
@@ -20,6 +20,6 @@ $deletar = mysqli_query($conexao,$sql);
 <center>
 	<h3>Deletado com Sucesso!</h3>
 	<div style="margin-top: 20px">
-		<a href="certificado.php" class="btn btn-warning">Voltar</a>
+		<a href="recebimento.php" class="btn btn-warning">Voltar</a>
 </center>
 </div>

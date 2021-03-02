@@ -6,7 +6,7 @@
 	<script src="https://kit.fontawesome.com/1b313b9cc5.js" crossorigin="anonymous"></script>
 	<style type="text/css">
 		#tamanhoContainer {
-			width: 1000px;
+			width: 1200px;
 		}
 	</style>
 </head>
