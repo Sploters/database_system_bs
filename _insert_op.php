@@ -16,9 +16,8 @@ $array = mysqli_fetch_array($buscar);
 $nivel = $array['nivel_usuario'];
 
 $op_num = $_POST['op_num'];
-$op_item = $_POST['op_item'];
 
-$sql = "INSERT INTO `op`( `op_num`,`op_item`) VALUES ($op_num, '$op_item')";
+$sql = "INSERT INTO `op`( `op_num`) VALUES ($op_num)";
 $inserir = mysqli_query($conexao,$sql);
 
 ?>

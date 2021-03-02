@@ -27,6 +27,13 @@ $sql = "SELECT nivel_usuario FROM usuarios WHERE mail_usuario = '$usuario'";
 $buscar = mysqli_query($conexao,$sql);
 $array = mysqli_fetch_array($buscar);
 $nivel = $array['nivel_usuario'];
+
+$sql = "SELECT * FROM `certificado`";
+$busca = mysqli_query($conexao,$sql);
+while ($array = mysqli_fetch_array($busca))
+{
+	$id_certificado = $array['id_certificado'];
+}
 ?>
 
 	<div class="container" id="tamanhoContainer">
@@ -34,9 +41,8 @@ $nivel = $array['nivel_usuario'];
 		<table class="table table-dark table-hover">
 		  <thead>
 		    <tr>
-		      <th scope="col">Número do Certificado</th>
-		      <th scope="col">Item Certificado</th>
-		      <th scope="col">Status</th>
+		      <th scope="col">Certificado</th>
+		      <th scope="col">Ticket Certificado</th>
 		      <th><center>Alterações</center></th>
 		    </tr>
 		  </thead>
@@ -50,15 +56,13 @@ $nivel = $array['nivel_usuario'];
 		    		while ($array = mysqli_fetch_array($busca))
 		    		{
 		    			$id_certificado = $array['id_certificado'];
-		    			$num_certificado = $array['num_certificado'];
-		    			$item_certificado = $array['item_certificado'];
-		    			$status_certificado = $array['status_certificado'];
-		    			$sql = "INSERT INTO `certificado`(`id_certificado`, `num_certificado`, `item_certificado`, `status_certificado`) VALUES ($id_certificado,'$num_certificado','$item_certificado','$status_certificado')";
+		    			$certificado = $array['num_certificado'];
+		    			$ticket_certificado = $array['ticket_status'];
+		    			$sql = "INSERT INTO `certificado`(`id_certificado`, `num_certificado`, `item_certificado`, `status_certificado`) VALUES ($id_certificado,'$certificado','$ticket_certificado')";
 		    		?>
 		    	<tr>
-				      <td><?php echo $num_certificado ?></td>
-				      <td><?php echo $item_certificado ?></td>
-				      <td><?php echo $status_certificado ?></td>
+				      <td><?php echo $certificado ?></td>
+				      <td><?php echo $ticket_certificado ?></td>
 		      		<td>
 
 	      			<a class="btn btn-warning btn-sm" form-group style="margin-left: 20px" href="editar_certificado.php?id=<?php echo $id_certificado ?>" role="button"><i class="fas fa-edit"></i>&nbsp;Editar</a>

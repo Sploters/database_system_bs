@@ -5,6 +5,10 @@
 	<title>Adicionando OPs</title>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<script src="https://kit.fontawesome.com/1b313b9cc5.js" crossorigin="anonymous"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="js/jquery.mask.min.js" type="text/javascript"></script>
 <style>
 body{
 	background-color: #ffffff;
@@ -41,6 +45,15 @@ $buscar = mysqli_query($conexao,$sql);
 $array = mysqli_fetch_array($buscar);
 $nivel = $array['nivel_usuario'];
 ?>
+
+<script type="text/javascript">
+		//CNPJ
+	$("#pj").mask("99.999.999/9999-99");
+	//Data
+	$("#fone").mask("(99) 9999-9999");
+</script>
+
+
 <div class="container" style="width: 400px; margin-top: 70px">
 
 	<form action="_insert_fornecedor.php" method="post">
@@ -51,18 +64,18 @@ $nivel = $array['nivel_usuario'];
   		</div>
 
   		<div class="form-group" style="margin-top: 20px">
-	    	<label>A</label>
-	    	<input type="text" name="a_fornecedor" class="form-control" required autocomplete="off" placeholder="(DDD) Fone">
+	    	<label>Fone</label>
+	    	<input type="text" name="a_fornecedor" id="fone" class="form-control" required autocomplete="off" placeholder="(DDD) Fone">
   		</div>
 
   		<div class="form-group" style="margin-top: 20px">
-	    	<label>B</label>
+	    	<label>E-Mail</label>
 	    	<input type="email" name="b_fornecedor" class="form-control" required autocomplete="off" placeholder="E-mail">
   		</div>
 
   		<div class="form-group" style="margin-top: 20px">
 	    	<label>CNPJ</label>
-	    	<input type="text" name="cnpj" class="form-control" required autocomplete="off" placeholder="CNPJ">
+	    	<input type="text" name="cnpj" id="pj" class="form-control" required autocomplete="off" placeholder="CNPJ">
   		</div>
 
 		<div style="text-align: right; margin-top: 20px">
@@ -74,6 +87,6 @@ $nivel = $array['nivel_usuario'];
 </div>
 
 <script type="text/JavaScript"src="js/bootstrap.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 </body>
 </html>

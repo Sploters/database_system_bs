@@ -6,6 +6,7 @@ function retorna($cod_material, $conexao) {
 	$resultado = mysqli_query($conexao, $result);
 	if($resultado->num_rows){
 		$row = mysqli_fetch_assoc($resultado);
+		$valores['id_material'] = $row['id_material'];
 		$valores['den_material'] = $row['den_material'];
 		$valores['dim_material'] = $row['dim_material'];
 		$valores['mat_material'] = $row['mat_material'];
