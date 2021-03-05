@@ -40,12 +40,16 @@ if(!isset($_SESSION['usuario'])){
 }
 
 include 'conexao.php';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 $sql = "SELECT nivel_usuario FROM usuarios WHERE mail_usuario = '$usuario'";
 $buscar = mysqli_query($conexao,$sql);
 $array = mysqli_fetch_array($buscar);
 $nivel = $array['nivel_usuario'];
 ?>
+<<<<<<< HEAD
 <!-- <form action="ocultar.php" method="get">
 <div style="text-align: right;">
 	<a type="sub" class="btn btn-danger" form-group href="ocultar.php">Excluir<i class="fas fa-trash-alt"></i></a>
@@ -86,6 +90,33 @@ $nivel = $array['nivel_usuario'];
 		  		<div class="form-group" style="margin-top: 20px">
 			    	<label>Certificado Item</label>
 			    	<input type="text" autocomplete="off" class="form-control" name="numero_certificado" value="<?php echo $numero_certificado ?>">
+=======
+
+	<div class="container" id="tamanhoContainer" style="margin-top: 40px">
+		<h3>Formulário de Certificados</h3>
+		<form action="_atualizar_certificado.php" method="post">
+			<?php
+
+			$sql = "SELECT * FROM `certificado` WHERE id_certificado = $id";
+			$buscar = mysqli_query($conexao,$sql);
+			while ($array = mysqli_fetch_array($buscar)){
+
+				$id_certificado = $array['id_certificado'];
+    			$num_certificado = $array['num_certificado'];
+    			$item_certificado = $array['item_certificado'];
+    			$status_certificado = $array['status_certificado'];
+			?>
+
+		  		<div class="form-group" style="margin-top: 20px">
+			    	<label>Número do Certificado</label>
+			    	<input type="text" autocomplete="off" class="form-control" name="num_certificado" value="<?php echo $num_certificado ?>">
+			    	<input type="number" class="form-control" name="id" value="<?php echo $id ?>" style="display: none">
+		  		</div>
+
+		  		<div class="form-group" style="margin-top: 20px">
+			    	<label>Certificado Item</label>
+			    	<input type="text" autocomplete="off" class="form-control" name="item_certificado" value="<?php echo $item_certificado ?>">
+>>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 		  		</div>
 
 		  			<div class="form-group" style="margin-top: 20px">
@@ -101,16 +132,28 @@ $nivel = $array['nivel_usuario'];
 					</div>
 
 		    	<div style="text-align: right;">
+<<<<<<< HEAD
 		    		<a href="recebimento.php" role="button" class="btn btn-primary"form-group style="margin-top: 20px">Voltar</a>
 		    		<button id="botao" class="btn "form-group style="margin-top: 20px">Atualizar</button>
 		    	</div>
 		    	
 		    <?php } ?>
 
+=======
+		    		<a href="certificado.php" role="button" class="btn btn-primary"form-group style="margin-top: 20px">Voltar</a>
+		    		<button type="submit" id="botao" class="btn "form-group style="margin-top: 20px">Atualizar</button>
+		    	</div>
+		    	
+		    <?php } ?>
+>>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 		</form>
 	</div>	
 
 <!-- JavaScript Bundle with Popper -->		
 <script type="text/JavaScript"src="js/bootstrap.js"></script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 </body>
 </html>

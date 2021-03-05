@@ -25,6 +25,10 @@ $dataP = explode('/', $dataB);
  $id_fornecedor =  $_POST['id_fornecedor'];
  $nome_fornecedor =  $_POST['nome_fornecedor'];
  $id_origem = $_POST['id_origem'];
+<<<<<<< HEAD
+=======
+ $ticket = $_POST['ticket'];
+>>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
  $recebedor = $_POST['recebedor'];//FELIPE
  $data_receb = $dataP[2].'-'.$dataP[1].'-'.$dataP[0];
  $qtd_receb = $_POST['qtd_receb'];
@@ -43,7 +47,10 @@ $dataP = explode('/', $dataB);
  //$status_certificado = $_POST['status_certificado'];
  $id_material =  $_POST['id_material'];
  $numero_certificado = $_POST['num_certificado'];
+<<<<<<< HEAD
  $status_ticket = '';
+=======
+>>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 	$sql = "SELECT id_certificado FROM `certificado`";
 		$busca = mysqli_query($conexao,$sql);
 		while ($array = mysqli_fetch_array($busca))
@@ -64,9 +71,13 @@ $sql = "INSERT INTO `certificado` (`num_certificado`) VALUES ($num_certificado)"
 $inserir = mysqli_query($conexao,$sql);
 
 
+<<<<<<< HEAD
 echo $sql = "INSERT INTO `recebimento` ( `id_usuario`, `id_fornecedor`, `nome_fornecedor`, `id_certificado`, `id_origem`, `id_material`, `recebedor`, `data_receb`, `qtd_receb`, `nf_num`, `item_nf`, `id_pedido`, `pedido_num`, `item_pedido`, `num_certificado`) VALUES ($id_usuario, $id_fornecedor, '$nome_fornecedor', $id_certificado, $id_origem, $id_material, '$recebedor', '$data_receb', $qtd_receb, $nf_num, '$item_nf', $id_pedido, $pedido_num, '$item_pedido', '$num_certificado', '$status_ticket')";
 
 
+=======
+echo $sql = "INSERT INTO `recebimento` ( `id_usuario`, `id_fornecedor`, `nome_fornecedor`, `id_certificado`, `id_origem`, `id_material`, `ticket`, `recebedor`, `data_receb`, `qtd_receb`, `nf_num`, `item_nf`, `id_pedido`, `pedido_num`, `item_pedido`, `num_certificado`) VALUES ($id_usuario, $id_fornecedor, '$nome_fornecedor', $id_certificado, $id_origem, $id_material, $ticket, '$recebedor', '$data_receb', $qtd_receb, $nf_num, '$item_nf', $id_pedido, $pedido_num, '$item_pedido', '$num_certificado')";
+>>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 $inserir = mysqli_query($conexao,$sql);
 
 ?>

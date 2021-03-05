@@ -65,6 +65,7 @@ $array = mysqli_fetch_array($buscar);
 $nivel = $array['nivel_usuario'];
 ?>
 
+<<<<<<< HEAD
 <div class="container" style="width: 400px; margin-top: 20px">
 
 	<script type="text/javascript">
@@ -91,18 +92,29 @@ while ($array = mysqli_fetch_array($busca))
 	$ticket = $array['ticket'];
 }
 
+=======
+
+
+<div class="container" style="width: 400px; margin-top: 20px">
+<?php
+include 'conexao.php';
+
+>>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 //$sql = "SELECT * FROM `usuarios`";
 $sql = "SELECT nome_usuario FROM usuarios WHERE '$usuario' = mail_usuario";
 $buscar = mysqli_query($conexao,$sql);
 $array = mysqli_fetch_array($buscar);
 $nome_usuario = $array['nome_usuario'];
 
+<<<<<<< HEAD
 $hoje = date('Y/m/d');
 $sql = "INSERT INTO `recebimento` (`status_ticket`, `id_usuario`, `id_material`, `id_fornecedor`, `id_certificado`, `id_origem`, `id_pedido`, `id_op`, `data_receb`, `recebedor`) VALUES ('', 1, 0, 0, 0, 0, 0, 1, '$hoje', '$nome_usuario')";
 $inserir = mysqli_query($conexao,$sql);
 
 
 
+=======
+>>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 //$nome_usuario = $_SESSION['usuario'];
 
 ?>
@@ -117,6 +129,7 @@ $inserir = mysqli_query($conexao,$sql);
 
 		//$sql = "SELECT * FROM `usuarios`";
 
+<<<<<<< HEAD
 		$sql = "SELECT * FROM recebimento";
 		$buscar = mysqli_query($conexao,$sql);
 		$array = mysqli_fetch_array($buscar);
@@ -124,6 +137,12 @@ $inserir = mysqli_query($conexao,$sql);
 		{
 			$ticket = $array['ticket'];
 		}
+=======
+		$sql = "SELECT MAX(ticket) as ticket FROM recebimento";
+		$buscar = mysqli_query($conexao,$sql);
+		$array = mysqli_fetch_array($buscar);
+		$ticket = 1 + $array['ticket'];//!0!
+>>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 
 		//$nome_usuario = $_SESSION['usuario'];
 
@@ -131,7 +150,11 @@ $inserir = mysqli_query($conexao,$sql);
 
 		<div class="form-group" style="margin-top: 40px">
 	    	<label>Ticket</label>
+<<<<<<< HEAD
 	    	<input name="ticket" type="text" class="form-control" required autocomplete="off" value="<?php echo 1 + $ticket?>" readonly>
+=======
+	    	<input name="ticket" type="text" class="form-control" required autocomplete="off" value="<?php echo $ticket?>" readonly>
+>>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
   		</div>
 
 
@@ -462,8 +485,13 @@ function origem_empresa(val) {
 		</div>
  -->
 		<div style="text-align: right; margin-top: 20px">
+<<<<<<< HEAD
 			<a href="recebimento.php" id="botao" role="button" class="btn">Cancelar</a>
 			<button type="submit" name="button_cad" class="btn btn-success">Cadastrar</button>
+=======
+			<a href="recebimento.php" role="button" class="btn btn-primary">Voltar</a>
+			<button type="submit" id="botao" name="button_cad" class="btn">Cadastrar</button>
+>>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 		</div>
 	</form>
 	</form>
