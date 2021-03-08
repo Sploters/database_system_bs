@@ -52,11 +52,7 @@ $sql = "SELECT * FROM recebimento";
 $busca = mysqli_query($conexao,$sql);
 while ($array = mysqli_fetch_array($busca))
 {
-<<<<<<< HEAD
 	$ticket = $array['ticket'];
-=======
-	$id_receb = $array['id_receb'];
->>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 }
 
 ?>
@@ -84,11 +80,7 @@ $nivel = $array['nivel_usuario'];
 	<div style="text-align: right;">
 	<a href="menu.php" role="button" class="btn btn-primary"form-group>Voltar</a>
 
-<<<<<<< HEAD
 	<a class="btn btn-success" form-group href="adicionar_recebimento.php?id=<?php echo $ticket+1 ?>" role="button"><i class="fas fa-plus"></i>&nbsp;Adicionar</a>	
-=======
-	<a class="btn btn-success" form-group href="adicionar_recebimento.php?id=<?php echo $id_receb+1 ?>" role="button"><i class="fas fa-plus"></i>&nbsp;Adicionar</a>	
->>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 	</div>
 
 		<table style="margin-top: 20px" class="table table-dark table-hover">
@@ -218,10 +210,6 @@ $nivel = $array['nivel_usuario'];
 
 		    		while ($array = mysqli_fetch_array($busca))
 		    		{
-<<<<<<< HEAD
-=======
-		    			$id_receb = $array['id_receb'];
->>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 		    			$ticket = $array['ticket'];
 		    			$recebedor = $array['recebedor'];
 		    			
@@ -236,15 +224,10 @@ $nivel = $array['nivel_usuario'];
 		    			$rastreabilidade = $array['rastreabilidade'];
 		    			$item_pedido = $array['item_pedido'];
 		    			$status_receb = $array['status_receb'];
-<<<<<<< HEAD
 		    			$status_ticket = $array['status_ticket'];
 		    		?>
 		    		<!-- style="display:none" -->
 		    	<tr <?php if($status_ticket == 'oculto1'){ ?> visibility: hidden <?php } ?> >
-=======
-		    		?>
-		    	<tr>
->>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 				      <td><?php echo $ticket ?></td>
 				      <td><?php echo $recebedor ?></td>
 				      <td><?php echo $data_receb ?></td>
@@ -263,7 +246,6 @@ $nivel = $array['nivel_usuario'];
 				      <td><?php echo $status_receb ?></td>
 		      		<td>
 
-<<<<<<< HEAD
 		      		<?php
 		      		if(array_key_exists('em_uso', $_POST)) {
 						em_uso();
@@ -290,14 +272,6 @@ $nivel = $array['nivel_usuario'];
 				    }
 	      			</script>
 
-=======
-	      			<a class="btn btn-warning btn-sm" form-group style="margin-left: 5px" href="editar_recebimento.php?id=<?php echo $id_receb ?>" role="button"><i class="fas fa-edit"></i></a>
-
-	      			<?php
-	      				if ($nivel != 3){
-	      			?>
-		      		<a class="btn btn-danger btn-sm" form-group href="deletar_recebimento.php?id=<?php echo $id_receb ?>" role="button"><i class="fas fa-trash-alt"></i></a>
->>>>>>> 90af6f307e84b736002b3f00033081cccbacfcc3
 			    		<?php } ?>
 			    								<?php } ?>
 											<?php } ?>
