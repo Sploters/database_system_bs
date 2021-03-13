@@ -35,11 +35,7 @@ $nivel = $array['nivel_usuario'];
 		  <thead>
 		    <tr>
 		      <th scope="col">Empresa Origem</th>
-<<<<<<< HEAD
-		      <th><center>teste</center></th>
-=======
 		      <th><center>Alterações</center></th>
->>>>>>> f9ac121748c67071f9063689ea99fc922cfa2b3d
 		    </tr>
 		  </thead>
 
@@ -53,16 +49,10 @@ $nivel = $array['nivel_usuario'];
 		    		{
 		    			$id_origem = $array['id_origem'];
 		    			$empresaorigem = $array['empresa_origem'];
-<<<<<<< HEAD
-		    			$state = $array['state'];
-						$sql = "INSERT INTO `origem`(`id_origem`, `empresa_origem`) VALUES ($id_origem,$empresaorigem)";
-		    		?>
-		    	<tr <?php if($state == 'oculto'){ ?> visibility: hidden <?php } ?> >
-=======
+						$state = $array['state'];
 		    			$sql = "INSERT INTO `origem`(`id_origem`, `empresa_origem`) VALUES ($id_origem,$empresaorigem)";
 		    		?>
-		    	<tr>
->>>>>>> f9ac121748c67071f9063689ea99fc922cfa2b3d
+		    	<tr <?php if($state == 'oculto'){ ?> visibility: hidden <?php } ?> >
 		      		<td><?php echo $empresaorigem ?></td>
 
 		      		<td>

@@ -15,7 +15,7 @@ $buscar = mysqli_query($conexao,$sql);
 $array = mysqli_fetch_array($buscar);
 $nivel = $array['nivel_usuario'];
 
-include 'script/password.php';
+// include 'script/password.php';
 
 $nomeusuario = $_POST['nomeusuario'];
 $mail = $_POST['mailusuario'];

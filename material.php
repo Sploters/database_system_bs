@@ -102,8 +102,9 @@ $nivel = $array['nivel_usuario'];
 					    $nar_material = $array['nar_material'];
 					    $um_material = $array['um_material'];
 					    $peso_espec_material = $array['peso_espec_material'];
+						$state = $array['state'];
 		    		?>
-		    	<tr>
+		    	<tr <?php if($state == 'oculto'){ ?> visibility: hidden <?php } ?> >
 		      		<td>
 
 	      			<a class="btn btn-warning btn-sm" form-group style="margin-left: 10px" href="editar_material.php?id=<?php echo $id_material ?>" role="button"><i class="fas fa-edit"></i></a>

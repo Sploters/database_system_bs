@@ -58,9 +58,10 @@ while ($array = mysqli_fetch_array($busca))
 		    			$id_certificado = $array['id_certificado'];
 		    			$certificado = $array['num_certificado'];
 		    			$ticket_certificado = $array['ticket_status'];
-		    			$sql = "INSERT INTO `certificado`(`id_certificado`, `num_certificado`, `item_certificado`, `status_certificado`) VALUES ($id_certificado,'$certificado','$ticket_certificado')";
+		    			$state = $array['state'];
+						$sql = "INSERT INTO `certificado`(`id_certificado`, `num_certificado`, `item_certificado`, `status_certificado`) VALUES ($id_certificado,'$certificado','$ticket_certificado')";
 		    		?>
-		    	<tr>
+		    	<tr <?php if($state == 'oculto'){ ?> visibility: hidden <?php } ?> >
 				      <td><?php echo $certificado ?></td>
 				      <td><?php echo $ticket_certificado ?></td>
 		      		<td>

@@ -60,9 +60,10 @@ $nivel = $array['nivel_usuario'];
 		    			$a_fornecedor = $array['a_fornecedor'];
 		    			$b_fornecedor = $array['b_fornecedor'];
 		    			$cnpj = $array['cnpj'];
+						$state = $array['state'];
 		    			$sql = "INSERT INTO `fornecedor`(`id_fornecedor`, `nome_fornecedor`, `a_fornecedor`, `b_fornecedor`, `cnpj`) VALUES ($id_fornecedor,$nome_fornecedor, '$a_fornecedor','$b_fornecedor','$cnpj')";
 		    		?>
-		    	<tr>
+		    	<tr <?php if($state == 'oculto'){ ?> visibility: hidden <?php } ?> >
 				      <td><?php echo $nome_fornecedor ?></td>
 				      <td><?php echo $a_fornecedor ?></td>
 				      <td><?php echo $b_fornecedor ?></td>

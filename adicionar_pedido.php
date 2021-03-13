@@ -13,7 +13,7 @@
 <style>
 body{
 	background-color: #ffffff;
-	color = black;
+	color : black;
 }
 
 #botao {
@@ -24,7 +24,7 @@ body{
 
 .dark-mode{
 	background-color: #181818;
-	color = white;
+	color : white;
 }
 </style>
 </head>

@@ -227,7 +227,7 @@ $nivel = $array['nivel_usuario'];
 		    			$status_ticket = $array['status_ticket'];
 		    		?>
 		    		<!-- style="display:none" -->
-		    	<tr <?php if($status_ticket == 'oculto1'){ ?> visibility: hidden <?php } ?> >
+		    	<tr <?php if($status_ticket == 'oculto'){ ?> visibility: hidden <?php } ?> >
 				      <td><?php echo $ticket ?></td>
 				      <td><?php echo $recebedor ?></td>
 				      <td><?php echo $data_receb ?></td>
@@ -246,16 +246,12 @@ $nivel = $array['nivel_usuario'];
 				      <td><?php echo $status_receb ?></td>
 		      		<td>
 
-<<<<<<< HEAD
-		      		
-=======
 		      		<?php
 		      		if(array_key_exists('em_uso', $_POST)) {
 						em_uso();
 					}
 
 		      		?>
->>>>>>> f9ac121748c67071f9063689ea99fc922cfa2b3d
 
 	      			<a class="btn btn-warning btn-sm" form-group style="margin-left: 20px" href="editar_recebimento.php?id=<?php echo $ticket ?>" role="button"><script type="text/javascript"> function em_uso() { 
 	      			$sql = "UPDATE `recebimento` SET `status_ticket` = 'em uso' WHERE ticket = $id";

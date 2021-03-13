@@ -58,9 +58,10 @@ $nivel = $array['nivel_usuario'];
 		    			//Na hora de pegar a data do BD e exibir na tela, faça a mesma coisa que fiz acima, porém troquei '-' por '/':
 						$dataP = explode('-', $prazo_pedido);
 						$dataE = $dataP[2].'/'.$dataP[1].'/'.$dataP[0];
+						$state = $array['state'];
 						$sql = "INSERT INTO `pedido`(`id_pedido`, `pedido_num`, `pedido_item`, `pedido_prazo`, `pedido_status`) VALUES ($id_pedido,$num_pedido,'$item_pedido',$prazo_pedido,'$status_pedido')";
 		    		?>
-		    	<tr>
+		    	<tr <?php if($state == 'oculto'){ ?> visibility: hidden <?php } ?> >
 				      <td><?php echo $num_pedido ?></td>
 				      <td><?php echo $item_pedido ?></td>
 				      <td><?php echo $dataE ?></td>

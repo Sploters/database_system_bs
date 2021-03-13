@@ -3,7 +3,7 @@
 <center>
 <h3>ERRO!</h3>
 	<div style="padding-top: 20px">
-			<a href="index.php" role="button" class="btn btn-primary">Você não possui cadastro!</a>
+			<a href="index.html" role="button" class="btn btn-primary">Você não possui cadastro!</a>
 	</div>
 </center>
 </div>
