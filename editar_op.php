@@ -73,25 +73,11 @@ $nivel = $array['nivel_usuario'];
 				$equipamento = $array['equipamento'];
 				$horas_orc = $array['horas_orc'];
 				$po_cliente = $array['po_cliente'];
-				$data1 = $array['prazo_contratual'];
-				$data2 = $array['inicio'];
+				$prazo_contratual = $array['prazo_contratual'];
+				$inicio = $array['inicio'];
 				$horas_real = $array['horas_real'];
-				$data3 = $array['prazo_previsto'];
-				$data4 = $array['termino_real'];
-
-				//Pegue a data no formato dd/mm/yyyy
-				//Exploda a data para entrar no formato aceito pelo DB.
-				$dataP = explode('-', $data1);
-				$dataP2 = explode('-', $data2);
-				$dataP3 = explode('-', $data3);
-				$dataP4 = explode('-', $data4);
-				// $dataP3 = explode('/', $data3);
-				// $dataP4 = explode('/', $data4);
-				//Altera a data para o Banco de Dados ler.
-				$prazo_contratual = $dataP[2].'/'.$dataP[1].'/'.$dataP[0];
-				$inicio = $dataP2[2].'/'.$dataP2[1].'/'.$dataP2[0];
-				$prazo_previsto = $dataP3[2].'/'.$dataP3[1].'/'.$dataP3[0];
-				$termino_real = $dataP4[2].'/'.$dataP4[1].'/'.$dataP4[0];
+				$prazo_previsto = $array['prazo_previsto'];
+				$termino_real = $array['termino_real'];
 			?>
 
 		<div class="form-group" style="margin-top: 20px">

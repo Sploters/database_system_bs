@@ -72,7 +72,7 @@ $nivel = $array['nivel_usuario'];
 		  		</div>
 
 		    	<div style="text-align: right;">
-		    		<a href="op.php" role="button" class="btn btn-primary"form-group style="margin-top: 20px">Voltar</a>
+		    		<a href="material.php" role="button" class="btn btn-primary"form-group style="margin-top: 20px">Voltar</a>
 		    		<button type="submit" id="botao" class="btn "form-group style="margin-top: 20px">Atualizar</button>
 		    	</div>
 		    	

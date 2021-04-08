@@ -88,12 +88,12 @@ $nivel = $array['nivel_usuario'];
 		
 		<div class="form-group" style="margin-top: 20px">
 	    	<label>Projeto</label>
-	    	<input type="text" name="projeto" class="form-control" required autocomplete="off" placeholder="Projeto">
+	    	<input type="text" name="projeto" class="form-control" autocomplete="off" placeholder="Projeto">
   		</div>
 
 		  <div class="form-group" style="margin-top: 20px">
 	    	<label>Quantidade</label>
-	    	<input type="number" name="qtd" class="form-control" required autocomplete="off" placeholder="Quantidade">
+	    	<input type="number" name="qtd" class="form-control" autocomplete="off" placeholder="Quantidade">
   		</div>
 
 		<div class="form-group" style="margin-top: 20px">
@@ -103,17 +103,17 @@ $nivel = $array['nivel_usuario'];
 		
 		<div class="form-group" style="margin-top: 20px">
 	    	<label>Horas Orçadas</label>
-	    	<input type="number" name="horas_orc" class="form-control" required autocomplete="off" placeholder="Horas Orçadas">
+	    	<input type="number" name="horas_orc" class="form-control" autocomplete="off" placeholder="Horas Orçadas">
   		</div>
 
 		<div class="form-group" style="margin-top: 20px">
 	    	<label>Prazo Contratual</label>
-	    	<input type="date" name="prazo_contratual" class="form-control" required autocomplete="off" placeholder="dd/mm/aaaa">
+	    	<input type="date" name="prazo_contratual" class="form-control" autocomplete="off" placeholder="dd/mm/aaaa">
   		</div>
 
 		<div class="form-group" style="margin-top: 20px">
 	    	<label>Data de Início</label>
-	    	<input type="date" name="inicio" class="form-control" required autocomplete="off" placeholder="Data de Início">
+	    	<input type="date" name="inicio" class="form-control" autocomplete="off" placeholder="Data de Início">
   		</div>
 		
 		<div style="text-align: right; margin: 20px 0px 20px 0px">

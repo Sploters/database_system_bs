@@ -17,6 +17,13 @@ $limitedelinks = 10;
 	<title>Material</title>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<script src="https://kit.fontawesome.com/1b313b9cc5.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/path/to/theme.default.css">
+	<!-- load jQuery and tablesorter scripts -->
+	<script type="text/javascript" src="/path/to/jquery-latest.js"></script>
+	<script type="text/javascript" src="/path/to/jquery.tablesorter.js"></script>
+
+	<!-- tablesorter widgets (optional) -->
+	<script type="text/javascript" src="/path/to/jquery.tablesorter.widgets.js"></script>
 	<style type="text/css">
 		#tamanhoContainer {
 			width: 1500px;
@@ -31,7 +38,13 @@ include 'conexao.php';
 $sql = "SELECT * FROM material";
 $buscar = mysqli_query($conexao,$sql);
 $array = mysqli_fetch_array($buscar);
-$id_material = $array['id_material'];
+$sql = "SELECT * FROM `material`";
+
+$busca = mysqli_query($conexao,$sql);
+while ($array = mysqli_fetch_array($busca))
+{
+	$id_material = $array['id_material'];
+}
 ?>
 
 <nav class="navbar fixed-top navbar bg-dark">
